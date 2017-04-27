@@ -45,11 +45,15 @@ class Table {
   }
 
   playerAt (ball) {
+    let bx1 = ball.pos.x - ball.radius
+    let bx2 = ball.pos.x + ball.radius
+  
     for (let i = 0; i < this.players.length; i++) {
       let other = this.players[i]
-      if (ball.pos.x + ball.radius > other.pos.x &&
-        ball.pos.x < other.pos.x + other.size.x && ball.pos.y + ball.radius > other.pos.y - (other.size.y / 2) &&
-        ball.pos.y < other.pos.y + (other.size.y / 2)) return other
+      if (bx1 < other.pos.x + other.size.x &&
+        bx2 > other.pos.x &&
+        ball.pos.y + ball.radius > other.pos.y &&
+        ball.pos.y < other.pos.y + other.size.y) return other
     }
   }
 
@@ -68,7 +72,7 @@ class Table {
     //ball.speed = new Vector(this.maxBallSpeed * Math.cos(bounceAngle), this.maxBallSpeed * -Math.sin(bounceAngle))
     ball.speed= ball.speed.times(-1)
     if (player.pos.x > this.width / 2) {
-      ball.x = player.pos.x - player.size.x - ball.radius
+      ball.x = player.pos.x - ball.radius
     } else {
       ball.x = player.size.x + ball.radius
     }
