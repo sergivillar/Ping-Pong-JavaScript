@@ -1,6 +1,6 @@
 class Player {
   constructor(x, y) {
-    this.size = new Vector(20, 100)
+    this.size = new Vector(10, 100)
     x = (x === 0) ? 0 : x - this.size.x
     this.pos = new Vector(x, y - (this.size.y / 2))
     this.points = 0

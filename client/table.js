@@ -67,14 +67,14 @@ class Table {
     let normalizedRelativeIntersectionY = (relativeIntersectY / (player.size.y / 2))
     let bounceAngle = normalizedRelativeIntersectionY * this.maxBounceAngle
 
-    console.log(relativeIntersectY)
+    // console.log(relativeIntersectY)
 
     //ball.speed = new Vector(this.maxBallSpeed * Math.cos(bounceAngle), this.maxBallSpeed * -Math.sin(bounceAngle))
-    ball.speed= ball.speed.times(-1)
+    ball.speed = ball.speed.times(-1)
     if (player.pos.x > this.width / 2) {
-      ball.x = player.pos.x - ball.radius
+      ball.pos.x = player.pos.x - ball.radius
     } else {
-      ball.x = player.size.x + ball.radius
+      ball.pos.x = player.size.x + ball.radius
     }
   }
 

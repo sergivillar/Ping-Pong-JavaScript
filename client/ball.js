@@ -25,7 +25,6 @@ class Ball {
     else if (obstable === 'lose') table.addPoint(this)
 
     let playerTouched = table.playerAt(this)
-    console.log(playerTouched)
     if (playerTouched) table.hitBall(playerTouched, this, table)
   }
 }
