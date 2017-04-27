@@ -8,7 +8,7 @@ class Player {
 
   draw (context) {
     context.beginPath()
-    context.fillStyle = 'red'
+    context.fillStyle = '#53973f'
     context.rect(this.pos.x, this.pos.y, this.size.x, this.size.y)
     context.fill()
 

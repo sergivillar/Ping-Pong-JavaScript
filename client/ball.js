@@ -12,7 +12,7 @@ class Ball {
 
   draw (context) {
     context.beginPath()
-    context.fillStyle = 'blue'
+    context.fillStyle = '#e9a363'
     context.arc(this.pos.x, this.pos.y, this.radius, 0, 2 * Math.PI)
     context.fill()
   }

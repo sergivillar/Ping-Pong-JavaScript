@@ -41,9 +41,7 @@ function runGame (level, Display, andThen) {
 
     if (table.mouse.x && table.mouse.y) table.players.map(player => player.act(step, table))
     table.ball.act(step, table)
-
-    table.ball.draw(table.context)
-    table.players.map(player => player.draw(table.context))
+    table.speedModificator += step
   })
 }
 
